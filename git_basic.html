@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GIT</title>
+	<style type="text/css">
+		body {
+			padding-left: 30%;
+		}
+
+	</style>
+</head>
+<body>
+	<p>
+		<h1>GIT回退</h1>
+		$ git reset --hard HEAD^         回退到上个版本 <br>
+		$ git reset --hard HEAD~3        回退到前3次提交之前，以此类推，回退到n次提交之前 <br>
+		$ git reset --hard commit_id     退到/进到 指定commit的sha码 <br>
+	</p> <br>
+	<p>
+		<h1>GIT 拉取远程覆盖本地</h1>
+		git fetch --all  <br>
+		git reset --hard origin/master  <br>
+		git pull  <br>
+	</p> <br>
+
+	<p>
+		<h1>GIT修改远程仓库</h1>
+	
+		1.修改命令 <br>	
+		git remote set-url origin [url] <br>	
+		例如：git remote set-url origin gitlab@gitlab.chumob.com:php/hasoffer.git <br>	
+
+		2.先删后加 <br>	
+
+		git remote rm origin <br>	
+		git remote add origin [url] <br>	
+	</p> <br>
+	<p>
+		<h1>npm yarn区别</h1>
+		npm install === yarn  <br>
+		npm install taco --save === yarn add taco <br>
+		npm uninstall taco --save === yarn remove taco <br>
+		npm install taco --save-dev === yarn add taco --dev <br>
+		npm update --save === yarn upgrade <br>
+	</p>
+	<p>
+		<h1>同步fock项目</h1>
+		1.先把B clone到本地 <br>	
+		<i style="margin: 20px; line-height: 26px;"></i>	git clone B_REPOSITORY_URL <br>	
+		2.再cd到本地B的目录，把A作为一个remote加到本地的B中（一般命名为upstream） <br>	
+		<i style="margin: 20px; line-height: 26px;"></i>	git remote add upstream A_REPOSITORY_URL <br>	
+		3.pull另一个A的remote（upstream）的相应分支（比如master）就可以 <br>	
+		<i style="margin: 20px; line-height: 26px;"></i>	git pull upstream master <br>	
+		4.最后push回github的B_REPOSITORY <br>	
+		<i style="margin: 20px; line-height: 26px;"></i>	git push origin master <br>	
+
+	</p>
+</body>
+</html>
